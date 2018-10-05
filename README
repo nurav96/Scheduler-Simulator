@@ -1,37 +1,7 @@
-Varun Iyengar
-CPE 453 - 11
-Professor Petersen
+To execute using python:
 
-Program 2: Scheduler Simulator
+    python3 schedSim <job-file.txt> -p <ALGORITHM> -q <QUANTUM>
 
-To execute using python conventions:
-
-	python3 schedSim <job-file.txt> -p <ALGORITHM> -q <QUANTUM>
-
-To execute using C conventions:
+To execute from command line:
     ./schedSim <job-file.txt> -p <ALGORITHM> -q <QUANTUM>
     
-
-Questions:
-
-1. For what types of workloads does SRJN deliver the same turnaround times as FIFO?
-
-    SRJN and FIFO will deliver the same turnaround times when all jobs have the same burst duration, OR when jobs arrive in ascending order of burst duration.
-
-2. For what types of workloads and quantum lengths does SRJN deliver the same response times as RR?
-
-    SRJN delivers the same response times as RR when the quantum used in RR is larger than the largest burst duration of the jobs AND when jobs arrive in ascending order of burst duration.
-
-3. What happens to response time with SRJN as job lengths increase? 
-
-    As job lengths increase, the average response times delivered by SRJN go up as well. This is because even the short jobs would take a significant amount of time to run.
-
-4. What happens to response time with RR as quantum lengths increase? Can you write an equation that gives the worst-case response time, given N jobs?
-
-    As quantum lengths increase, the average response times delivered by RR go up as well. This is due to the increased time quanta each subsequent process must wait for before it is allowed to access the CPU.
-
-    If there are n processes and Q is the time length, then, in the worst case, 
-    a process will have to wait Q * (n-1) units of time before it is allowed to run.
-
-    Worst case is met when each process i has a burst time longer than the quantum used. 
-    (The simulator does not idle)
